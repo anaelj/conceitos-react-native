@@ -19,6 +19,7 @@ const actWait = async (amount = 0) => {
 };
 
 const repositoryId = 'd6e43105-a559-45b7-8fd7-53416b415741';
+//const repositoryId = '8b092839-c624-43f0-b32e-83a33ce9c2c1';
 
 apiMock.onGet("repositories").reply(200, [
   {
@@ -64,7 +65,7 @@ describe("Likes", () => {
     fireEvent.press(getByTestId(`like-button-${repositoryId}`));
 
     await actWait();
-
+    
     expect(getByTestId(`repository-likes-${repositoryId}`)).toHaveTextContent("1 curtida");
 
     apiMock
